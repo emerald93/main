@@ -1,3 +1,8 @@
+/*
+*This file is to perform test of stationary for multiple variables using ADF test
+*use varsoc to determine number of lags in ADF
+*/
+
 global varlist var1 var2 var3
 foreach var of varlist $varlist{ 
   display "******TEST OF STATIONARY FOR `var' ******" 
