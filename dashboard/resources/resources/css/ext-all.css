@@ -1,0 +1,13 @@
+@import '../ext-theme-classic/ext-theme-classic-all.css';
+.chatbutton{
+	width:100px!important; 
+	height:25px!important;
+	background-image: url('/content/dashboard/images/chat.png') !important; 
+	background-size: 100px 25px;
+	//background-color: #ffffff; 
+	border:none
+}
+.communication_icon{
+	//width:10px ;
+	//height:20px;
+}

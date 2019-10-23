@@ -1,0 +1,234 @@
+.x-body {
+    font-family: Century Gothic, sans-serif;
+    font-size: 11px;
+    color: #333;
+}
+.positive-row .x-grid-cell { 
+    background-color: #C6EFCE; 
+    color: #006100; 
+} 
+
+.negative-row .x-grid-cell { 
+    background-color:#FFC7CE;
+    color: #9C0006; 
+}
+
+/*.x-grid-row-alt .x-grid-cell {
+    background-color: lightgrey !important;
+}*/
+/*.x-header-text {
+	color:red;
+}*/
+
+table tr.even {
+	background-color: lightgrey !important;
+}
+
+a {
+	color:blue;
+}
+
+a:hover {
+	text-decoration:underline;
+	cursor:pointer;
+}
+
+.cell-highlight .x-grid-cell-inner  { 
+	background-color:#FFF2E5; 
+	//background-color:#CC99FF; 
+}
+
+.custom-sort-highlight .x-grid-cell-inner{
+	background-color: #DEDEE0 !important;
+	//color: lightgrey !important;
+}
+
+.custom-highlight .x-grid-cell {
+    background-color: #FFAA00 !important;
+}
+
+.custom-highlight-grey .x-grid-cell{
+    background-color: lightgrey !important;
+}
+
+.custom-highlight-red .x-grid-cell{
+    background-color: #ff7a7a !important;
+}
+
+.custom-highlight-blue .x-grid-cell{
+    background-color: #A2D5F2 !important;
+    font-weight: bold; 
+}
+
+.custom-highlight-green .x-grid-cell{
+    background-color: #C6EFCE !important;
+    font-weight: bold; 
+}
+
+.grey-column{
+    background-color: lightgrey;
+}
+
+.blue-column{
+    background-color: lightblue ;
+}
+
+/*tr.x-grid-row.x-grid-row-over td  {
+    background-color: #FFEB84;
+	font-weight: bold; 
+}*/
+
+.x-grid-row-over .x-grid-cell  {
+    background-color: #FFEB84 !important;
+	font-weight: bold; 
+}
+
+.x-grid-row-summary  {
+    background-color: #C6EFCE;
+	font-weight: bold !important; 
+}
+
+tfoot .x-grid-row-summary{
+	background-color: #CC99FF;
+	font-weight: bold !important; 
+	//color: purple;
+}
+
+.x-docked-summary .x-grid-row-summary {
+	background-color: #CC99FF;
+	//font-weight: bold !important; 
+	//color: purple;
+}
+
+
+
+.total-row .x-grid-cell  { 
+    background-color: #FFCC99;
+    color: #3F3F76; 
+}
+
+
+
+.complete-row .x-grid-cell { 
+    background-color: #C6EFCE;
+    color: #006100; 
+}
+
+.financial-row-normal .x-grid-cell {
+	background-color: #ffffff;
+	color: #000000;
+	font-weight: normal;
+	padding-left: 32px;
+}
+
+.financial-row-subtotal .x-grid-cell {
+	background-color: #C6EFCE;
+	color: #006100;
+	font-weight: bold;
+	padding-left: 24px;
+}
+
+.green .x-grid-cell {
+	background-color: #C6EFCE;
+	color: #006100;
+	font-weight: bold;
+}
+
+.financial-row-total .x-grid-cell {
+	background-color: #FFCC99;
+	color: #3F3F76;
+	font-weight: bold;
+	padding-left: 16px;
+}
+
+.purple .x-grid-cell {
+	background-color: #FFCC99;
+	color: #3F3F76;
+	font-weight: bold;
+	//padding-left: 16px;
+}
+
+.financial-row-grandtotal .x-grid-cell {
+	background-color: #CC99FF;
+	color: #660099;
+	font-weight: bold;
+	padding-left: 8px;
+}
+
+.tan .x-grid-cell {
+	background-color: #CC99FF;
+	color: #660099;
+	font-weight: bold;
+	//padding-left: 8px;
+}
+
+.financial-row-header .x-grid-cell {
+	background-color: #FFFFFF;
+	color: #555555;
+	font-weight: bold;
+	font-size: 16px;
+	padding-left: 0px;
+}
+
+
+
+
+
+.icon-red {
+    background-image:  url('/images/xkmark.png');
+    background-repeat: no-repeat;
+}
+
+.icon-green {
+    background-image:  url('/images/checkmark.png');
+    background-repeat: no-repeat;
+}
+/*
+.x-panel-header{
+	//background-image: -webkit-linear-gradient(top,#dae7f6,#cddef3 45%,#abc7ec 46%,#abc7ec 50%,#b8cfee 51%,#cbddf3);
+	background-image: -webkit-linear-gradient(top,#00FFFF,#0099FF 45%,#0066FF 46%,#0066FF 50%,#0099FF 51%,#00FFFF);
+}
+
+.x-panel-header-default-vertical {
+	background-image: -webkit-linear-gradient(right,#00FFFF,#0099FF 45%,#0066FF 46%,#0066FF 50%,#0099FF 51%,#00FFFF);
+}
+*/
+.x-accordion-hd{
+	background: #0099FF;
+}
+
+.x-panel-header {
+	background: #0C70E8;
+	border: 1px solid #0D3BFF;
+}
+
+.x-toolbar-default{
+	//background: #0C70E8;
+	//border: 1px solid #0D3BFF;
+}
+
+.x-panel-header-text-container{
+	color:white;
+}
+
+.icon {
+	background-size: 16px 16px;
+}
+
+.iframe-wrapper {
+	-webkit-overflow-scrolling: touch !important;
+	overflow-y: scroll !important;
+	overflow-x: scroll !important;
+}
+
+.yellow-cell{
+	background-color:yellow;
+}
+
+.orange-cell{
+	background-color:orange;
+}
+
+.green-cell{
+	background-color: #00ff0a;
+}
