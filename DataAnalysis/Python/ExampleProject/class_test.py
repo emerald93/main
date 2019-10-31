@@ -34,6 +34,45 @@ class DataCSV:
 #
 #     return diff
 
+
+def is_stationary(X, sig=.05):
+    """
+    Stationary test for multiple variables using Augmented Dickey-Fuller unit root test
+    :param X: array_like, ist of variables
+    :param sig: float, significant level
+    :return: boolean, true if variable is Stationary, false if Non-stationay
+    """
+    adf_titles = ['tstat', 'pvalue', 'lags', 'nobs', 'critical value', 'icbest']
+    adf_results = {}
+    data_index = 0
+    adf_mes2 = {}
+    # print(X)
+
+    for x in X:
+        adf = adfuller(X.iloc[:, data_index])
+        data_index = data_index + 1
+
+        for i in range(len(adf_titles)):
+            adf_results[adf_titles[i]] = adf[i]
+
+        if adf_results['pvalue'] < sig:
+            adf_mes = x + " is Stationary"
+            adf_mes2[x] = True
+        else:
+            adf_mes = x + " is Non-stationary"
+            adf_mes2[x] = False
+
+        # print(adf_mes)
+
+    return adf_mes2
+
+# stationary_results = is_stationary(variables)
+# for sr in stationary_results:
+#     if stationary_results[sr]:
+#         variables[sr] = variables[sr]
+#     else:
+#         variables[sr] = difference(variables[sr])
+# variables = variables.dropna()
 # name_columns = ['date','effr', 'gdp', 'u', 'nber', 'cpi', 'm2', 'oil', 'ip', 'ys', 'cli']
 columns = ['gdp', 'effr', 'u']
 data = DataCSV('data.csv')
