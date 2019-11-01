@@ -27,8 +27,8 @@ class TimeSeriesStationary:
         :return: array_like 1d, data without unit root
     """
 
-    def __init__(self):
-        self
+    def __init__(self, data):
+        self.data = data
 
     def has_unit_root(self, data_array, sig=.05):
         adf = adfuller(data_array)
@@ -37,7 +37,12 @@ class TimeSeriesStationary:
         if pvalue < sig:
             return False
         else:
-            return True
+            return
+
+    def log(self, data_array):
+        for i in range(len(data_array)):
+            data_array[i] = np.math.log(data_array[i])
+        return data_array
 
     def difference(self, data_array, interval=1):
         diff = [None]
