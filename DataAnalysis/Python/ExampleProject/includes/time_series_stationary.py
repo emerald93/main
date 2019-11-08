@@ -5,32 +5,20 @@ from statsmodels.tsa.stattools import adfuller
 
 class TimeSeriesStationary:
     """
-    has_unit_root
-    -------------
-        test if data has unit root (non-stationary) using ADF
-        :param data: array 1d
-        :param sig: float, significant level
-        :return: boolean, true if it has unit root, false if it's stationary
-    difference
-    -----------
-        :param data: array_like 1d
-        :param interval: int
-        :return: array_like 1d, differencing at interval level data
-    time_series_stationary
-    ---------------------
-        :param data: array_like , original data
-        :return: array_like 1d, data without unit roottime_series_stationary
-    lags
-    ---------------------
-        :param data: array_like , original data
-        :param lag: int , number of lags
-        :return: array_like 1d, data without unit root
+    Tranform time series data that eliminates unit root problems in data frame format
     """
 
     def __init__(self, data):
         self.data = data
 
     def has_unit_root(self, data_array, sig=.05):
+        """
+        test if data has unit root (non-stationary) using ADF
+        :param data: array 1d
+        :param sig: float, significant level
+        :return: boolean, true if it has unit root, false if it's stationary
+    difference
+        """
         adf = adfuller(data_array)
         pvalue = adf[1]
         # print(pvalue)
@@ -40,11 +28,22 @@ class TimeSeriesStationary:
             return
 
     def log(self, data_array):
+        """
+        put variable into natural logarithm
+        :param data: array_like 1d
+        :return: array_like 1d, natural logarithm of the data set
+        """
         for i in range(len(data_array)):
             data_array[i] = np.math.log(data_array[i])
         return data_array
 
     def difference(self, data_array, interval=1):
+        """
+        tranform data set at a certain difference level
+        :param data_array: array_like 1d
+        :param interval: int
+        :return: array_like 1d, differencing at interval level data
+        """
         diff = [None]
         data_array = np.array(data_array)
         for i in range(interval, len(data_array)):
@@ -54,6 +53,11 @@ class TimeSeriesStationary:
         return diff
 
     def time_series_stationary(self, data, lag_vars=[], lag=0):
+        """
+        :param data: array_like , original data
+        :param lag_vars: array_like 1d, list all variables that need to be in lag form
+        :return: array_like , data without unit root
+        """
         pd.options.mode.chained_assignment = None
         for variable in data:
             if self.has_unit_root(data[variable]):
