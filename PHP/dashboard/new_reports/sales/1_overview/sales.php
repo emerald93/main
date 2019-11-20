@@ -2,7 +2,7 @@
 	$root = realpath($_SERVER['DOCUMENT_ROOT']);
 	include_once "$root/includes/db_connect_new.php";
 	error_reporting(0);
-	$emp_number = $_SESSION['atk_emp_number'];
+	$emp_number = $_SESSION['emp_num'];
 	$time_1 = microtime(true);
 
 	$today = strtotime('-1 year');
@@ -74,14 +74,6 @@
 		$ty_net_sales = round($ty_rows['sales']);
 		$ty_sales_units = round($ty_rows['sales_units']);
 		$ty_gross_margin = round($ty_rows['gross_margin']);
-
-		if($volume == '') {
-			$volume = 'NA';
-		}
-		
-		if($primary_dc == '') {
-			$primary_dc = 999;
-		}
 
 		$get_location_name = mysql_query("SELECT name, region, volume, state, primary_dc,open_date, zone FROM ldap.store_listing WHERE number = '$location'") or die(mysql_error());
 		while($location_name_rows = mysql_fetch_array($get_location_name)){
