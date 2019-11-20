@@ -298,8 +298,8 @@ require_once "$root/resources/phpExcel/Classes/PHPExcel.php";//echo "HI";
 $objPHPExcel = new PHPExcel();
 
 // Set document properties
-$objPHPExcel->getProperties()->setCreator("Matthew Westerhof")
-							 ->setLastModifiedBy("Matthew Westerhof")
+$objPHPExcel->getProperties()->setCreator("RK")
+							 ->setLastModifiedBy("RK")
 							 ->setTitle("Overview")
 							 ->setSubject("Office 2007 XLSX Overview Document")
 							 ->setDescription("Overview document for Office 2007 XLSX, generated using PHP classes.")
