@@ -2,7 +2,7 @@
 $root = realpath($_SERVER["DOCUMENT_ROOT"]);
 include_once "$root/includes/db_connect_new.php";
 require_once("$root/includes/init_session.php");
-$emp_number = $_SESSION['atk_emp_number'];
+$emp_number = $_SESSION['emp_num'];
 $time_1 = microtime(true);
 
 //Set Dates
@@ -71,9 +71,6 @@ $fineline_statement = statement($fineline_codes, "fineline_code");
 
 
 $query = "SELECT sum(net_sales) AS sales, sum(net_sales_units) AS sales_units, sum(gross_margin) AS gross_margin, fineline_code FROM dashboard.data_fineline WHERE location IN ($location) AND run_date BETWEEN '1420092000' AND '1432098000' AND $fineline_statement group by fineline_code";
-
-//003498,003491,003492,003493,003496,003497,003498
-//
 
 $group_query = mysql_query($query);
 echo "<tr><td>$query</td></tr>";
